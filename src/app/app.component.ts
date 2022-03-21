@@ -48,6 +48,7 @@ export class AppComponent implements OnInit {
   }
 
   getAllProducts(){
+    console.log('getAllProducts');
     this.productData=this.api.getProducts().subscribe({
       next: (res)=>{
         this.productData=res;
