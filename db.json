@@ -1,0 +1,58 @@
+{
+  "productList": [
+    {
+      "productName": "iphone 13",
+      "category": "Electronics",
+      "freshness": "Brandnew ",
+      "price": 70000,
+      "comment": "this is iphone 13",
+      "date": "2022-03-23T18:30:00.000Z",
+      "id": 1
+    },
+    {
+      "productName": "mango",
+      "category": "Fruits",
+      "freshness": "Brandnew ",
+      "price": 40,
+      "comment": "this is mango",
+      "date": "2022-03-23T18:30:00.000Z",
+      "id": 2
+    },
+    {
+      "productName": "iphone se 2",
+      "category": "Electronics",
+      "freshness": " Refurbrished ",
+      "price": 15000,
+      "comment": "this is iphone",
+      "date": "2022-03-25T18:30:00.000Z",
+      "id": 3
+    },
+    {
+      "productName": "oneplus nord 2",
+      "category": "Electronics",
+      "freshness": " Refurbrished ",
+      "price": 12000,
+      "comment": "this is  oneplus",
+      "date": "2022-03-22T18:30:00.000Z",
+      "id": 4
+    },
+    {
+      "productName": "pixel 4a",
+      "category": "Electronics",
+      "freshness": "Brandnew ",
+      "price": 28000,
+      "comment": "this is pixel 4a",
+      "date": "2022-03-22T18:30:00.000Z",
+      "id": 5
+    },
+    {
+      "productName": "Brocolli",
+      "category": "Vegetable",
+      "freshness": "Brandnew ",
+      "price": 100,
+      "comment": "vegetable",
+      "date": "2022-03-29T18:30:00.000Z",
+      "id": 6
+    }
+  ]
+}
