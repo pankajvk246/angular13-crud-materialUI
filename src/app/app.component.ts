@@ -20,9 +20,11 @@ export class AppComponent implements OnInit {
   dataSource!: MatTableDataSource<any>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-
+  
   title = 'Angular-13Crud-MaterialUi';
   productData: any;
+
+  toggle = false;
   constructor(public dialog: MatDialog,private api:ApiService){
     
   }
@@ -61,7 +63,7 @@ export class AppComponent implements OnInit {
         // console.log(this.dataSource.sort,"sort")
       },
       error: (e)=>{
-        alert("error while fetching the records")
+       // alert("error while fetching the records");
       }
     })
 

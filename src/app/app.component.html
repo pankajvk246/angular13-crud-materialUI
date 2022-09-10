@@ -8,12 +8,12 @@
   </button>
   <span>Angular 13 CRUD Using Material UI</span>
   <span class="example-spacer"></span>
-  <button mat-raised-button color="warn" (click)="openDialog()">
+  <button *ngIf="toggle" mat-raised-button color="warn" (click)="openDialog()">
     Add Product
   </button>
 </mat-toolbar>
 
-<div class="container">
+<div *ngIf="toggle" class="container">
   <div style="margin-top: 10px">
     <mat-form-field appearance="standard">
       <mat-label>Filter</mat-label>
@@ -96,3 +96,6 @@
     </div>
   </div>
 </div>
+
+<app-drag-and-drop *ngIf="!toggle"></app-drag-and-drop>
+
