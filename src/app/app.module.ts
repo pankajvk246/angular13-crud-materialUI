@@ -23,7 +23,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import { DragAndDropComponent } from './components/drag-and-drop/drag-and-drop.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
-
+import {MatTreeModule} from '@angular/material/tree';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +51,8 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    DragDropModule
+    DragDropModule,
+    MatTreeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
