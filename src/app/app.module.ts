@@ -21,6 +21,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import {MatSortModule} from '@angular/material/sort';
     
   ],
   imports: [
+    DragDropModule,
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule,

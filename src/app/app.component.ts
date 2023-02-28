@@ -6,6 +6,7 @@ import {AfterViewInit, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
+import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 
 
 
@@ -29,77 +30,25 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-    this.getAllProducts()
   }
+  todo = ['Get to work', 'Pick up groceries', 'Go home', 'Fall asleep'];
 
-  openDialog() {
-    this.dialog.open(DialogComponent, {
-       width: "30%"
-    }).afterClosed().subscribe((val)=>{
-     
-      console.log(val,"value")
-      if(val=='save'){
-        this.getAllProducts();
+  done = ['Get up', 'Brush teeth', 'Take a shower', 'Check e-mail', 'Walk dog'];
 
-      }
-      
-      
-    });
-  }
-
-  getAllProducts(){
-    console.log('getAllProducts');
-    this.productData=this.api.getProducts().subscribe({
-      next: (res)=>{
-        this.productData=res;
-        console.log(this.productData);
-        this.dataSource=new MatTableDataSource(res);
-        // console.log(this.dataSource,"datasource");
-        this.dataSource.paginator=this.paginator;
-        // console.log(this.dataSource.paginator,"paginator");
-        this.dataSource.sort=this.sort;
-        // console.log(this.dataSource.sort,"sort")
-      },
-      error: (e)=>{
-        alert("error while fetching the records")
-      }
-    })
-
-  }
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
+  drop(event: CdkDragDrop<string[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex,
+      );
     }
   }
 
-  editProduct(row:any){
-    this.dialog.open(DialogComponent,{
-      width:'30%',
-      data:row,
-    }).afterClosed().subscribe((val)=>{
-      console.log(val,"value")
-      if(val=='update'){
-        this.getAllProducts();
-
-      }
-    })
-  }
-  deleteProduct(id:number){
-    this.api.deleteProduct(id).subscribe({
-      next:(res)=>{
-        alert("deleted ssuccesfully");
-        this.getAllProducts();
-      },
-      error:(e)=>{
-        console.log(e,"error")
-        alert("there is an error please check console")
-      }
-
-    })
-  }
+ 
 }
 
 
